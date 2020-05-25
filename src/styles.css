@@ -2,7 +2,8 @@ body {
   font-family: sans-serif;
 }
 #game {
-  width: 800px;
-  height: 600px;
   border: 1px solid black;
+}
+img {
+  display: none;
 }
