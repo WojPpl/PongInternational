@@ -6,12 +6,14 @@
 	<meta charset="UTF-8" />
 </head>
 
-<body>
-
+<body style="background: url('src/images/field.jpg') no-repeat center center; background-size: cover">
+	<audio src="src/sounds/hit.wav" controls preload="auto"></audio>
 	<img src="src/images/ball.png" id="ball" />
 
-	<canvas id="game" width="973" height="600" style="background: url('src/images/field.jpg') no-repeat center center;"></canvas>
-
+	<img src="src/images/gamelogo.png"  style="display: block; margin: 10vh auto; max-width: 100%"/>
+	<center>
+		<canvas id="game" width="973" height="600" style="border: none"></canvas>
+	</center>
 	<script src="src/index.js">
 	</script>
 </body>

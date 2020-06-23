@@ -1,25 +1,23 @@
 class KeyboardHandle {
     constructor(player) {
         document.addEventListener("keydown", event => {
-            //ArrowUp // ArrowDown // z // a
             switch (event.key) {
-                case "ArrowUp":
-                    player.moveUp();
+                case "ArrowLeft":
+                    player.moveLeft();
                     break;
-                case "ArrowDown":
-                    player.moveDown();
+                case "ArrowRight":
+                    player.moveRight();
                     break;
 
             }
         });
         document.addEventListener("keyup", event => {
-            //ArrowUp // ArrowDown // z // a
             switch (event.key) {
-                case "ArrowUp":
+                case "ArrowLeft":
                     if(player.direction < 0)
                     player.stop();
                     break;
-                case "ArrowDown":
+                case "ArrowRight":
                     if(player.direction > 0)
                     player.stop();
                     break;
