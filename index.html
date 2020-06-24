@@ -2,15 +2,17 @@
 <html>
 
 <head>
-	<title>PongInternational</title>
+	<title>SpaceStriker</title>
 	<meta charset="UTF-8" />
 </head>
 
 <body style="background: url('src/images/field.jpg') no-repeat center center; background-size: cover">
-	<audio src="src/sounds/hit.wav" controls preload="auto"></audio>
 	<img src="src/images/ball.png" id="ball" />
+	<img src="src/images/alien.png" id="alien" />
+	<img src="src/images/explosion.png" id="explosion" />
 
-	<img src="src/images/gamelogo.png"  style="display: block; margin: 10vh auto; max-width: 100%"/>
+	<p style="color: #ffffff; margin-bottom: 0">Number of lives: <span id="lives">3</span></p>
+	<img src="src/images/gamelogo.png"  style="display: block; margin: 0 auto 10vh; max-width: 100%"/>
 	<center>
 		<canvas id="game" width="973" height="600" style="border: none"></canvas>
 	</center>
