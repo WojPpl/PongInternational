@@ -20,8 +20,7 @@ let currentLevel = 1
 
 let aliens = createLevel(getLevels(currentLevel));
 
-let ball = new Ball(GAME_WIDTH, GAME_HEIGHT, player, lives, aliens);
-
+let ball = new Ball(GAME_WIDTH, GAME_HEIGHT, player, lives);
 
 new KeyboardHandle(player);
 
@@ -46,9 +45,9 @@ const gameLoop = (time)  => {
         canvasContext.clearRect(0,0,GAME_WIDTH,GAME_HEIGHT);
         player.update(timeChange);
         player.draw(canvasContext);
-        lives = ball.update(lives, aliens, canvasContext);
-        livesShower.innerText = lives;
+        lives = ball.update(lives, canvasContext, aliens);
         ball.draw(canvasContext);
+        livesShower.innerText = lives;
         requestAnimationFrame(gameLoop);
     }
 

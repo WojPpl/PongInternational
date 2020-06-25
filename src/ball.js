@@ -14,22 +14,28 @@ export default class Ball {
     reset() {
         this.position = {x: 475, y: 290};
     }
-    update(lives, aliens, context) {
+    update(lives, context, aliens) {
+        aliens.map(alien => {
+            alien.update(this.position.x, this.position.y);
+            alien.draw(context);
+        });
         this.position.x += this.speed.x;
         this.position.y += this.speed.y;
-        aliens.map(alien => {if (alien.position.y === this.position.y) {alien.visible = false;}; alien.draw(context)});
+
+        let ballBottom = this.position.y + this.size;
+        let playerTop = this.player.position.y;
+        let playerLeft = this.player.position.x;
+        let playerRight = this.player.position.x + this.player.width;
+
+
         if(this.position.x > this.gameWidth || this.position.x < 0) {
-            this.speed.x = -(this.speed.x) ;
+            this.speed.x = -(this.speed.x);
         };
 
         if(this.position.y < 0) {
             this.speed.y = -(this.speed.y);
         }
 
-        let ballBottom = this.position.y + this.size;
-        let playerTop = this.player.position.y;
-        let playerLeft = this.player.position.x;
-        let playerRight = this.player.position.x + this.player.width;
 
         if (ballBottom >= playerTop && this.position.x >= playerLeft && this.position.x + this.size <= playerRight) {
             this.speed.x += 1;
@@ -43,6 +49,6 @@ export default class Ball {
             return lives - 1
         }
 
-        return {lives: lives}
+        return lives
     }
 }
